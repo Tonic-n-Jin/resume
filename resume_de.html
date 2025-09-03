@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle Jovanovic Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /*
+         * This style block defines the overall page layout for both screen preview and printing.
+         * We simulate a standard letter-sized page (8.5in x 11in) for the screen view.
+         */
+        body {
+            background-color: #e5e7eb;
+            /* A light gray background to see the page contrast */
+            font-family: 'Inter', sans-serif;
+        }
+
+        .page {
+            width: 8.5in;
+            height: 11in;
+            margin: 2rem auto;
+            /* Center the page on the screen */
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            /* Stack header, main, and footer vertically */
+        }
+
+        .sidebar {
+            background-color: #f3f4f6;
+            /* Light gray background for the sidebar */
+        }
+
+        .sidebar-subtitle {
+            color: #1d222b;
+            font-size: medium;
+            font-weight: 900;
+            /* Centered text for sidebar subtitles */
+        }
+
+        .sidebar-text {
+            color: #242b37;
+            /* Dark gray color for sidebar text */
+        }
+
+        .header-footer {
+            background-color: #1d222b;
+            /* Dark blue background for the header */
+        }
+
+        .header-block {
+            background-color: #1d222b;
+            /* Dark blue background for the header */
+        }
+
+        .main-header {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #1d222b;
+            /* Dark blue color for main headers */
+        }
+
+        .role-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .role-title {
+            font-weight: 900;
+            font-size: 1.2em;
+            /* Semi-bold font for role titles */
+        }
+
+        .company-title {
+            font-weight: 800;
+            font-size: .95em;
+            color: #1B4F91;
+            /* Medium font for company titles */
+            margin-left: .5em;
+            margin-bottom: 0.01em;
+        }
+
+        .role-responsibilities {
+            margin-left: 1em;
+            margin-right: 2em;
+            list-style-type: disc;
+            padding-left: 1.5em;
+        }
+
+        .role-responsibility {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            line-height: 1.4;
+            /* Change bullet point style */
+            list-style-type: square;
+        }
+
+        .role-years {
+            margin-left: 1em;
+            margin-right: 2em;
+            list-style-type: disc;
+            padding-left: 1.5em;
+        }
+
+
+        hr {
+            border: 1px outset #ffffff;
+        }
+
+
+        hr.style13 {
+            height: 10px;
+            border: 0;
+            box-shadow: 0 5px 10px 0px #8c8b8b10 inset;
+        }
+
+        /*
+         * Print-specific styles.
+         * This ensures that when you print, the browser understands the page dimensions
+         * and removes unnecessary elements like the margin and shadow we used for screen preview.
+         */
+        @media print {
+            body {
+                background-color: white;
+                /* Print background should be white */
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen">
+
+    <!-- Printable Area -->
+    <div class="page">
+
+        <!-- HEADER -->
+        <header class="flex-shrink-0 header-footer" style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);">
+            <div class="header-block h-full text-white flex items-center justify-between p-5">
+
+                <!-- -- QR Code -->
+                <div class=" block px-3 py-3 rounded">
+                    <a href="https://www.linkedin.com/in/kylejovanovic">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="bg-slate-300 p-1 rounded-full ml-4"
+                            style="box-shadow: 1px 2px 4px rgba(0, 0, 0, 1);">
+                            <div class="bg-slate-700 p-3 rounded-full"
+                                style="box-shadow: 1px 2px 4px rgba(0, 0, 0, 1);">
+                                <div
+                                    class="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center shadow-lg">
+                                    <img src="qr_linkedin.png" alt="QR Code" class="w-20 h-20">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <!-- -- Name and Title -->
+                <div class="flex-1 text-right mr-6">
+                    <h1 class="text-6xl font-bold"
+                        style="text-shadow: 0px 2px 0 rgba(100, 100, 100, .8), 0px 3px 0px rgba(0,0,0, 1);">
+                        <a href="mailto:kyle.robert.j@outlook.com">Kyle
+                        Jovanovic</a>
+                    </h1>
+                <div class="bg-gray-00 block px-3 py- ">
+                    <p class="text-sm text-slate-100 font-semibold"
+                        style="margin-top: 10px;text-shadow: 0px 1px 0 rgba(100, 100, 100, .8), 0px 2px 0px rgba(0,0,0, 1);">
+                        Data Engineer | Data
+                        Scientist</p>
+                    <p class="text-sm text-slate-300">Philadelphia, PA</p>
+                </div>
+
+                </div>
+
+            </div>
+        </header>
+
+        <!-- BODY -->
+        <main class="flex-grow flex flex-row">
+
+            <!-- --Left Sidebar -->
+            <div class="sidebar w-[33%] border-r-1 border-gray-300 flex flex-col space-y-2 rounded-l-md p-2"
+                style="box-shadow: 4px 0px 4px rgba(0, 0, 0, .051);">
+                <div>
+                    <h3 class="bg-slate-700 text-gray-100 text-center text-xs uppercase font-bold tracking-widest py-1 rounded-tl-md rounded-tr-md">
+                        Contact
+                    </h3>
+                    <hr class="style13" />
+                    <div class="mt-3 space-y-2 text-gray-700 text-sm" style="font-size:.75em;margin: 0px 00px 0px 10px;">
+                        <div class="flex items-start">
+                            <svg xmlns="https://www.w3.org/2000/svg"
+                                class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-slate-800" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                            </svg>
+                            <div class="grid grid-cols-[45px,1fr] text-sm">
+                                <span class="text-xs text-slate-500 uppercase tracking-wide flex items-end"
+                                    style="font-size: .55em; height: 100%;">
+                                    Email
+                                </span>
+                                <a href="mailto:kyle.robert.j@outlook.com" class="hover:text-teal-300 break-all">
+                                    <span class="sidebar-text" style="font-size: .85em;">
+                                        kyle.robert.j@outlook.com
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <svg xmlns="https://www.w3.org/2000/svg"
+                                class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-slate-800" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.06l-2.12 2.12a16.001 16.001 0 006.364 6.364l2.12-2.12a1 1 0 011.06-.272l4.553 1.518a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z" />
+                            </svg>
+                            <div class="grid grid-cols-[45px,1fr] text-sm">
+                                <span class="text-xs text-slate-500 uppercase tracking-wide flex items-end"
+                                    style="font-size: .55em; height: 100%;">
+                                    Phone
+                                </span><span class="sidebar-text" style="font-size: .85em;">
+                                    <a href="tel:2155314697">(215) 531-4697</a></span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <svg xmlns="https://www.w3.org/2000/svg"
+                                class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-slate-800" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.41 7.86 10.94.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.35-1.3-1.71-1.3-1.71-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.75-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 015.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.42.36.8 1.08.8 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.21.68.8.56A10.51 10.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z" />
+                            </svg>
+                            <div>
+                                <div class="grid grid-cols-[45px,1fr] text-sm">
+                                    <span class="text-xs text-slate-500 uppercase tracking-wide flex items-end"
+                                        style="font-size: .55em; height: 100%;">
+                                        GitHub
+                                    </span>
+                                    <span class="sidebar-text" style="font-size: .85em;">
+                                        <a href="https://github.com/Tonic-n-Jin" target="_blank" rel="noopener"
+                                            class="hover:text-teal-300 break-all">
+                                            github.com/Tonic-n-Jin
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+<h3 class="bg-slate-700 text-gray-100 text-center text-xs uppercase font-bold tracking-widest py-1 rounded-tl-md rounded-tr-md">
+                        Education</h3>
+                    <hr class="style13" />
+                    <div class="mt-3 space-y-2 text-gray-600 text-sm ml-2" style="font-size:.75em;margin: 5px 10px 5px 10px;">
+                        <div class="flex items-start">
+                            <svg xmlns="https://www.w3.org/2000/svg"
+                                class="w-4 h-4 mr-3 mt-1 flex-shrink-0 text-slate-400" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                            </svg>
+                            <div class="flex-1">
+                                <span class="font-semibold text-slate-700 block">
+                                    Pennsylvania State University
+                                </span>
+                                <span class="font-light text-slate-500 block">
+                                    Bachelor of Arts, Economics
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+<h3 class="bg-slate-700 text-gray-100 text-center text-xs uppercase font-bold tracking-widest py-1 rounded-tl-md rounded-tr-md">
+                        Skills</h3>
+                    <hr class="style13" />
+                    <div class="mt-3 space-y-2 text-gray-600 text-sm ml-2" style="font-size:.8em;margin: 5px 10px 5px 10px;">
+                        <li class="flex items-start">
+                            <svg xmlns="https://www.w3.org/2000/svg"
+                                class="w-4 h-4 mt-0.5 mr-2 flex-shrink-0 text-slate-600" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+                            </svg>
+                            <div>
+                                <span class="font-semibold text-slate-700">Programming & Languages</span>
+                                <ul class="mt-1 space-y-1.5">
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 256 255"
+                                            class="w-4 h-4 mr-2 flex-shrink-0">
+                                            <path fill="#3776AB55"
+                                                d="M126.9 0c-10.6.1-20.7.9-29.7 2.3-26.3 4.3-31.1 13.3-31.1 29.9v21.9h62.2v7.3H66.1c-16.7 0-31.3 10-35.9 29.1-5.3 22-5.5 35.8 0 58.5 4.1 17.2 13.9 29.1 30.6 29.1h20.3v-27c0-19.5 16.9-36.8 36.9-36.8h62.1c16.4 0 29.7-13.4 29.7-29.9V32.2c0-15.9-13.5-27.2-29.7-29.9C162.3.9 137.5-.1 126.9 0zm-30.4 18.3c5.7 0 10.3 4.6 10.3 10.3 0 5.7-4.6 10.3-10.3 10.3-5.7 0-10.3-4.6-10.3-10.3 0-5.7 4.6-10.3 10.3-10.3z" />
+                                            <path fill="#FFD43B99"
+                                                d="M192.3 78.8v26.9c0 20.3-17.2 37.3-37.3 37.3h-62.1c-16.3 0-29.7 13.5-29.7 29.9v58.5c0 15.9 13.6 25.2 29.7 29.9 18.9 5.3 37 6.3 62.1 0 15.7-3.9 29.7-11.7 29.7-29.9v-21.9h-62.1v-7.3h62.1c16.7 0 23-11.8 29.7-29.1 6.2-15.9 6-35.7 0-58.5-4.1-17.2-13-29.1-29.7-29.1h-20.3zm-30.4 132.9c5.7 0 10.3 4.6 10.3 10.3 0 5.7-4.6 10.3-10.3 10.3-5.7 0-10.3-4.6-10.3-10.3 0-5.7 4.6-10.3 10.3-10.3z" />
+                                        </svg>
+                                        <span class="sidebar-text">Python</span>
+                                    </li>
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                        </svg>
+                                        <span class="sidebar-text">SQL (T-SQL, PL/SQL, SnowSQL)</span>
+                                    </li>
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-slate-400"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <!-- Square brackets [] -->
+                                            <path d="M6 4v16M8 4H6M8 20H6" />
+                                            <path d="M18 4v16M16 4h2M16 20h2" />
+                                            <!-- Pattern inside -->
+                                            <circle cx="12" cy="8" r="1" />
+                                            <path d="M12 10l-1 2h2l-1-2" />
+                                            <circle cx="10" cy="16" r="0.5" />
+                                            <circle cx="12" cy="16" r="0.5" />
+                                            <circle cx="14" cy="16" r="0.5" />
+                                        </svg>
+                                        <span class="sidebar-text">Regex</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="https://www.w3.org/2000/svg"
+                                class="w-4 h-4 mt-0.5 mr-2 flex-shrink-0 text-slate-600" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5v14c0 1.657 4.03 3 9 3s9-1.343 9-3V5" />
+                            </svg>
+                            <div>
+                                <span class="font-semibold text-slate-700">Databases & Warehousing</span>
+                                <ul class="mt-1 space-y-1.5">
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                                        </svg>
+                                        <span class="sidebar-text">Snowflake</span>
+                                    </li>
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                            <path d="M9 9h6v6H9z" />
+                                            <path d="M16 3v18" />
+                                        </svg>
+                                        <span class="sidebar-text">SQL Server (SSMS)</span>
+                                    </li>
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M3 12c0-3 1-5 3-6 1-.5 2-.5 3 0 2 1 3 3 3 6 0 2-1 4-2 5-.5.5-1 1-2 1s-1.5-.5-2-1c-1-1-2-3-2-5z" />
+                                            <path d="M12 8c2-2 4-2 6-1 1 .5 2 1.5 2 3s-1 2.5-2 3c-2 1-4 1-6-1" />
+                                            <circle cx="8" cy="10" r="1" />
+                                            <path d="M15 12c1 0 2 1 2 2s-1 2-2 2-2-1-2-2 1-2 2-2" />
+                                        </svg>
+
+                                        <span class="sidebar-text">MySQL</span>
+                                    </li>
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <ellipse cx="12" cy="12" rx="9" ry="4" />
+                                            <path d="M12 8c-5 0-9 1.8-9 4s4 4 9 4 9-1.8 9-4-4-4-9-4z" />
+                                            <circle cx="12" cy="12" r="2" />
+                                        </svg>
+                                        <span class="sidebar-text">Oracle Database</span>
+                                    </li>
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M6 8c0-3 2-5 5-5s5 2 5 5c0 2-1 4-2 5h-6c-1-1-2-3-2-5z" />
+                                            <path d="M11 13v6c0 1 1 2 2 2s2-1 2-2v-6" />
+                                            <path d="M9 13v4c0 1-1 2-2 2s-2-1-2-2v-4" />
+                                            <circle cx="9" cy="9" r="1" />
+                                            <circle cx="15" cy="9" r="1" />
+                                            <path d="M18 8c1-1 2-1 3 0" />
+                                        </svg>
+                                        <span class="sidebar-text">PostgreSQL</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="https://www.w3.org/2000/svg"
+                                class="w-4 h-4 mt-0.5 mr-2 flex-shrink-0 text-slate-600" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 19h4V5H4v14zm6 0h4V9h-4v10zm6 0h4V3h-4v16z" />
+                            </svg>
+                            <div>
+                                <span class="font-semibold text-slate-700">Business Intelligence Tools</span>
+                                <ul class="mt-1 space-y-1.5">
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="3" />
+                                            <circle cx="6" cy="6" r="2" />
+                                            <circle cx="18" cy="6" r="2" />
+                                            <circle cx="6" cy="18" r="2" />
+                                            <circle cx="18" cy="18" r="2" />
+                                            <path d="m9.59 9.59 4.82 4.82" />
+                                            <path d="m14.41 9.59-4.82 4.82" />
+                                        </svg>
+                                        <span class="sidebar-text">Qlik Sense/Cloud</span>
+                                    </li>
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                            <polyline points="14,2 14,8 20,8" />
+                                            <line x1="8" y1="13" x2="16" y2="13" />
+                                            <line x1="8" y1="17" x2="12" y2="17" />
+                                        </svg>
+                                        <span class="sidebar-text">SQL Server Reporting Services</span>
+                                    </li>
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="3" width="7" height="7" />
+                                            <rect x="14" y="3" width="7" height="7" />
+                                            <rect x="14" y="14" width="7" height="7" />
+                                            <rect x="3" y="14" width="7" height="7" />
+                                            <path d="M10 12h4" />
+                                            <path d="M12 10v4" />
+                                        </svg>
+                                        <span class="sidebar-text">IBM Cognos</span>
+                                    </li>
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                        </svg>
+                                        <span class="sidebar-text">Microsoft Power BI</span>
+                                    </li>
+                                    <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
+                                        <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="8" width="4" height="8" />
+                                            <rect x="10" y="5" width="4" height="14" />
+                                            <rect x="17" y="11" width="4" height="2" />
+                                            <line x1="12" y1="2" x2="12" y2="5" />
+                                            <line x1="12" y1="19" x2="12" y2="22" />
+                                            <line x1="5" y1="6" x2="5" y2="8" />
+                                            <line x1="5" y1="16" x2="5" y2="18" />
+                                        </svg>
+                                        <span class="sidebar-text">Tableau</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+
+                <div>
+<h3 class="bg-slate-700 text-gray-100 text-center text-xs uppercase font-bold tracking-widest py-1 rounded-tl-md rounded-tr-md">
+                        Certifications</h3>
+                    <hr class="style13" />
+                    <ul class="mt-2 space-y-2 text-gray-700 text-sm ml-2" style="font-size:.7em;">
+                        <div>
+                            <span class="font-medium text-slate-700">
+                                <a href="https://www.ascm.org/learning-development/certifications-credentials/cscp/#why-cscp"
+                                    target="_blank" rel="noopener noreferrer">Certified Supply Chain Professional,
+                                    CSCP</a></span>
+                                    <span class="font-smaller text-slate-700" style="margin-left: 10px;">
+                                <a href="https://www.ascm.org/learning-development/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    Association for Supply Chain Management
+                                </a>
+                                </span>
+                        </div>
+                        <div>
+                            <span class="font-medium text-slate-700">
+                                <a href="https://www.cbp.gov/trade/programs-administration/customs-brokers/becoming-customs-broker"
+                                    target="_blank" rel="noopener noreferrer">Licensed Customs House Broker, LCHB</a>
+                            </span>
+                                    <span class="font-smaller text-slate-700" style="margin-left: 10px;">
+                                <a href="https://www.cbp.gov/" target="_blank" rel="noopener noreferrer">U.S. Customs and Border Protection</a>
+                            </span>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- --Right Side -->
+            <div class="w-[68%] p-1 flex flex-col space-y-2 mx-2">
+                <!-- -- --SUMMARY -->
+                <div>
+<!-- Enhanced Divider -->
+<div class="flex items-center justify-center my-2">
+  <hr class="flex-grow border-t border-gray-300">
+  <h1 class="px-4 text-lg font-semibold tracking-wide text-slate-700 uppercase">Summary</h1>
+  <hr class="flex-grow border-t border-gray-300">
+</div>
+                    <p class="text-slate-900" style="margin-left: 10px;  font-size: .7em;">
+                        Data Engineer with 8+ years of experience transforming complex data into actionable insights.
+                        Expert in designing and optimizing cloud-native ELT pipelines using Python, SQL, Snowflake, and
+                        AWS. Proven track record of enhancing data quality, developing predictive models, and leading
+                        cross-functional projects that drive business transformation and operational efficiency.
+                    </p>
+                </div>
+                <!-- -- --PROFESSIONAL EXPERIENCE -->
+                <div>
+                    <!-- Divider -->
+<!-- Enhanced Divider -->
+<div class="flex items-center justify-center my-2">
+  <hr class="flex-grow border-t border-gray-300">
+  <h1 class="px-4 text-lg font-semibold tracking-wide text-slate-700 uppercase">Professional Experience</h1>
+  <hr class="flex-grow border-t border-gray-300">
+</div>
+                    <section style="font-size: .65em; margin-left: 10px; margin-right: 10px;">
+
+                        <!-- Data Scientist -->
+                        <div class="role-layout" style="margin: 0px;">
+                            <h3 class="role-title">Data Scientist</h3>
+                            <p class="role-years">2023 - 2024</p>
+                        </div>
+                        <div class="role-layout" style="margin: 0px;">
+                            <p class="company-title">PSA BDP | Philadelphia, PA</p>
+                            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8aDpHgrKpVwvVy27cv5r50CXbRwLdwaOJ6Q&s"
+                                alt="Company Logo"
+                                style="width:50px; object-fit:contain; vertical-align:middle; margin-right: 5px;"> -->
+                        </div>
+                        <ul class="role-responsibilities">
+                            <li class="role-responsibility">Developed and maintained ETL processes from various sources
+                                into a centralized DW.</li>
+                            <li class="role-responsibility">Designed, built, and optimized cloud-based ELT pipelines
+                                using AWS, dbt, and Snowflake.</li>
+                            <li class="role-responsibility">Documented and maintained source target mapping with
+                                technical and business terminology.</li>
+                            <li class="role-responsibility">Implemented version-controlled workflows to standardize
+                                analytics processes across teams.</li>
+                            <li class="role-responsibility">Developed and deployed predictive models to inform business
+                                decisions and optimize processes.</li>
+                        </ul>
+                        <!-- Project Manager, Business Transformation -->
+                        <div>
+                            <div class="role-layout">
+                                <h3 class="role-title">Project Manager, Business
+                                    Transformation</h3>
+                                <p class="role-years">2020 - 2023</p>
+                            </div>
+                            <div class="role-layout">
+                                <p class="company-title">BDP International | Philadelphia, PA</p>
+
+                            </div>
+                            <ul class="role-responsibilities">
+                                <li class="role-responsibility">Partnered with executive leadership to restructure and
+                                    modernize financial systems.</li>
+                            </ul>
+                        </div>
+                        <!-- Senior Manager, Data Analytics -->
+                        <div>
+                            <div class="role-layout">
+                                <h3 class="role-title">Senior Manager, Data Analytics</h3>
+                                <p class="role-years">2018 - 2020</p>
+                            </div>
+                            <div class="role-layout">
+                                <p class="company-title">BDP International | Philadelphia, PA</p>
+                                <img src="https://ml.globenewswire.com/Resource/Download/a0fd6bc7-a104-4ee2-a55e-958fc19797f2"
+                                    alt="Company Logo"
+                                    style="width:0px; object-fit:contain; vertical-align:middle; margin-right: 5px;">
+                            </div>
+                            <ul class="role-responsibilities">
+                                <li class="role-responsibility">Utilized SQL, Python, and BI languages
+                                    to generate business insights and optimize operations.</li>
+                            </ul>
+                        </div>
+                        <!-- Manager, Operations & Compliance -->
+                        <div>
+                            <div class="role-layout">
+                                <h3 class="role-title">Manager, Operations & Compliance</h3>
+                                <p class="role-years">2016 - 2018</p>
+                            </div>
+                            <p class="company-title">BDP International | Philadelphia, PA</p>
+                            <ul class="role-responsibilities">
+                                <li class="role-responsibility">Managed a team of 15+ associates, specialists, analysts,
+                                    and team leaders.</li>
+                            </ul>
+                        </div>
+                        <!-- Developer, Systems Integrations -->
+                        <div>
+                            <div class="role-layout">
+                                <h3 class="role-title">Developer, Systems Integrations</h3>
+                                <p class="role-years">2015 - 2016</p>
+                            </div>
+                            <p class="company-title">BDP International | Philadelphia, PA</p>
+                            <ul class="role-responsibilities">
+                                <li class="role-responsibility">Built and maintained data pipelines for US Customs
+                                    compliance initiatives.</li>
+                            </ul>
+                        </div>
+
+                    </section>
+                </div>
+
+                <div>
+<!-- Enhanced Divider -->
+<div class="flex items-center justify-center my-2">
+  <hr class="flex-grow border-t border-gray-300">
+  <h1 class="px-4 text-lg font-semibold tracking-wide text-slate-700 uppercase">Projects</h1>
+  <hr class="flex-grow border-t border-gray-300">
+</div>
+                    <!-- -- --PROJECTS -->
+                    <section style="margin-left: 10px; margin-right: 10px;margin-top: -5px;">
+                        <div style="font-size: .8rem;" class="text-gray-700">
+                            <div class="flex justify-between items-center">
+                                <strong>Automated Data Engineering & EDA</strong>
+                                <span class="text-right text-slate-500" style="font-size: smaller;">Singapore, SG</span>
+                            </div>
+                        </div>
+                            <p style="margin-left: 10px;font-size:.7em"><strong>Methodology:</strong> CRISP-DM </p>
+                             <p style="margin-left: 10px;font-size:.7em">  <strong>Tools:</strong> Qlik Cloud (ODAG),
+                                Snowflake, AWS
+                            </p> 
+                        <div style="font-size: .8rem;" class="text-gray-700">
+                            <div class="flex justify-between items-center">
+                                <strong>EDW Cloud Migration</strong>
+                                <span class="text-right text-slate-500" style="font-size: smaller;">Philadelphia, US</span>
+                            </div>
+                        </div>
+                            <p style="margin-left: 10px;font-size:.7em"><strong>Methodology:</strong> Agile/Scrum </p>
+                            <p style="margin-left: 10px;font-size:.7em"><strong>Tools:</strong> AWS, Snowflake,
+                                Jira/Confluence, SQL Server</p>
+                        <div style="font-size: .8rem;" class="text-gray-700">
+                            <div class="flex justify-between items-center">
+                                <strong>EOM & Business Process Outsourcing</strong>
+                                <span class="text-right text-slate-500" style="font-size: smaller;">Bangalore, IN</span>
+                            </div>
+                        </div>
+                            <p style="margin-left: 10px;font-size: .7em"><strong>Methodology:</strong> Accenture
+                                Delivery Suite 
+                                </p>
+                                <p style="margin-left: 10px;font-size:.7em"><strong>Tools:</strong> SQL Server,
+                                Microsoft Power Platform, Qlik Cloud</p>
+                        <div style="font-size: .8rem;" class="text-gray-700">
+                            <div class="flex justify-between items-center">
+                                <strong>ERP implementation</strong>
+                                <span class="text-right text-slate-500" style="font-size:smaller;">10+ US Locations</span>
+                            </div>
+                        </div>
+                            <p style="margin-left: 10px;font-size: .7em"><strong>Methodology:</strong> Agile/Scrum 
+                                </p>
+                                <p style="margin-left: 10px;font-size:.7em"><strong>Tools:</strong> SQL Server, Microsoft Office Suite, Qlik Sense</p>
+                        </div>
+                    </section>
+                </div>
+
+        </main>
+        <!-- FOOTER -->
+        <footer class="header-footer flex-shrink-0 flex items-center justify-between py-3 text-xs text-gray-100">
+            <span class="ml-2" style="font-size: .68em;"><strong>References:</strong>
+                <a href="mailto:kyle.robert.j@outlook.com?subject=Reference%20Request%20-%20Kyle%20Jovanovic&body=Hello%20Kyle,%0D%0A%0D%0AI%20hope%20this%20email%20finds%20you%20well.%20I%20am%20reaching%20out%20regarding%20your%20professional%20references.%0D%0A%0D%0ACould%20you%20please%20provide%20contact%20information%20for%202-3%20professional%20references%20who%20can%20speak%20to%20your%20work%20experience%20and%20qualifications?%0D%0A%0D%0AThank%20you%20for%20your%20time.%0D%0A%0D%0ABest%20regards,"
+                    target="_blank" rel="noopener" class="hover:text-teal-400 mr-2">
+                    Available upon request
+                </a></span>
+            <span class="mx-2" style="font-size: .68em;">Kyle Jovanovic | Data Specialist</span>
+            <a href="https://www.linkedin.com/in/kylejovanovic/" target="_blank" rel="noopener"
+                class="hover:text-teal-400 mr-2" style="font-size: .68em;">https://www.linkedin.com/in/kylejovanovic
+            </a>
+        </footer>
+
+    </div>
+</body>
+
+</html>
