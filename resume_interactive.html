@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle Jovanovic | Interactive Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* * This improved style block sets up a responsive, clean layout for both screen and print.
+         * It includes variables for theming (light/dark mode) and defines the overall aesthetic.
+         */
+        :root {
+            --page-bg: #ffffff;
+            --body-bg: #e5e7eb;
+            --sidebar-bg: #f3f4f6;
+            --header-footer-bg: #1d222b;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --text-light: #ffffff;
+            --accent-color: #38bdf8;
+            --highlight-bg: rgba(56, 189, 248, 0.1);
+            --highlight-border: #38bdf8;
+        }
+
+        html.dark {
+            --page-bg: #1f2937;
+            --body-bg: #111827;
+            --sidebar-bg: #374151;
+            --header-footer-bg: #0f172a;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --text-light: #f9fafb;
+            --accent-color: #7dd3fc;
+            --highlight-bg: rgba(125, 211, 252, 0.15);
+            --highlight-border: #7dd3fc;
+        }
+
+        body {
+            background-color: var(--body-bg);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .page {
+            width: 8.5in;
+            height: 11in;
+            margin: 2rem auto;
+            background-color: var(--page-bg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            color: var(--text-primary);
+        }
+
+        .sidebar {
+            background-color: var(--sidebar-bg);
+            transition: background-color 0.3s ease;
+        }
+
+        .header-footer {
+            background-color: var(--header-footer-bg);
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-item {
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            border-radius: 0.25rem;
+        }
+
+        .skill-item:hover {
+            background-color: var(--highlight-bg);
+            color: var(--accent-color);
+            transform: translateX(4px);
+        }
+        
+        .skill-item.selected {
+            background-color: var(--highlight-bg);
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .experience-item, .project-item {
+            transition: opacity 0.4s ease, border-color 0.4s ease;
+            border-left: 3px solid transparent;
+            padding-left: 0.75rem;
+            margin-left: -0.75rem;
+        }
+
+        .highlight {
+            border-left-color: var(--highlight-border);
+            opacity: 1 !important;
+        }
+
+        .dimmed {
+            opacity: 0.4;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                height: 100vh;
+                border: none;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="p-4">
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="no-print fixed top-4 right-4 z-50 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 shadow-md transition-transform duration-200 hover:scale-110">
+        <svg id="theme-icon-sun" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        <svg id="theme-icon-moon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+    </button>
+
+    <!-- Printable Area -->
+    <div class="page">
+        <!-- HEADER -->
+        <header class="flex-shrink-0 header-footer" style="box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+            <div class="text-white flex items-center justify-between p-5">
+                <!-- QR Code -->
+                <a href="https://www.linkedin.com/in/kylejovanovic" target="_blank" class="block transform transition-transform duration-300 hover:scale-105">
+                    <div class="bg-slate-700 p-2 rounded-full shadow-lg">
+                        <div class="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center">
+                            <img src="qr_linkedin.png" alt="LinkedIn QR Code" class="w-20 h-20">
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Name and Title -->
+                <div class="text-right">
+                    <h1 class="text-6xl font-bold" style="text-shadow: 1px 2px 4px rgba(0,0,0,0.5);">
+                        <a href="mailto:kyle.robert.j@outlook.com" class="transition-colors duration-200 hover:text-[var(--accent-color)]">Kyle Jovanovic</a>
+                    </h1>
+                    <p class="text-lg text-slate-100 font-semibold mt-2" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">
+                        Data Engineer | Data Scientist
+                    </p>
+                    <p class="text-sm text-slate-300">Philadelphia, PA</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- BODY -->
+        <main class="flex-grow flex flex-row">
+            <!-- Left Sidebar -->
+            <aside class="sidebar w-1/3 p-4 border-r border-gray-200 dark:border-gray-600 flex flex-col space-y-6">
+                <!-- Contact Section -->
+                <section>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-center mb-3 p-1 bg-slate-700 text-gray-100 rounded-t-md">Contact</h3>
+                    <div class="space-y-3 text-xs">
+                        <!-- Email -->
+                        <div class="flex items-center group">
+                            <svg class="w-4 h-4 mr-3 flex-shrink-0 text-slate-600 dark:text-slate-300" xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" /></svg>
+                            <a href="mailto:kyle.robert.j@outlook.com" class="break-all transition-colors duration-200 group-hover:text-[var(--accent-color)]">kyle.robert.j@outlook.com</a>
+                        </div>
+                        <!-- Phone -->
+                         <div class="flex items-center group">
+                            <svg class="w-4 h-4 mr-3 flex-shrink-0 text-slate-600 dark:text-slate-300" xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.06l-2.12 2.12a16.001 16.001 0 006.364 6.364l2.12-2.12a1 1 0 011.06-.272l4.553 1.518a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z" /></svg>
+                            <a href="tel:2155314697" class="transition-colors duration-200 group-hover:text-[var(--accent-color)]">(215) 531-4697</a>
+                        </div>
+                        <!-- GitHub -->
+                        <div class="flex items-center group">
+                            <svg class="w-4 h-4 mr-3 flex-shrink-0 text-slate-600 dark:text-slate-300" xmlns="https://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.218.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .266.18.577.688.48A10.005 10.005 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                            <a href="https://github.com/Tonic-n-Jin" target="_blank" rel="noopener" class="break-all transition-colors duration-200 group-hover:text-[var(--accent-color)]">github.com/Tonic-n-Jin</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Education Section -->
+                <section>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-center mb-3 p-1 bg-slate-700 text-gray-100 rounded-t-md">Education</h3>
+                     <div class="flex items-start text-xs">
+                        <svg class="w-4 h-4 mr-3 mt-0.5 flex-shrink-0 text-slate-400" xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
+                        <div>
+                            <p class="font-semibold text-[var(--text-primary)]">Pennsylvania State University</p>
+                            <p class="text-[var(--text-secondary)]">Bachelor of Arts, Economics</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section class="flex-grow">
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-center mb-3 p-1 bg-slate-700 text-gray-100 rounded-t-md">Skills</h3>
+                    <p class="text-xs text-center text-[var(--text-secondary)] mb-3 no-print">Click a skill to highlight related experience.</p>
+                    <div class="space-y-4 text-xs">
+                        <div>
+                            <h4 class="font-semibold mb-1">Languages & Programming</h4>
+                            <ul class="pl-2 space-y-1">
+                                <li class="skill-item p-1" data-skill="Python">Python</li>
+                                <li class="skill-item p-1" data-skill="SQL">SQL (T-SQL, PL/SQL, SnowSQL)</li>
+                                <li class="skill-item p-1" data-skill="Regex">Regex</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h4 class="font-semibold mb-1">Databases & Warehousing</h4>
+                            <ul class="pl-2 space-y-1">
+                                <li class="skill-item p-1" data-skill="Snowflake">Snowflake</li>
+                                <li class="skill-item p-1" data-skill="SQL Server">SQL Server (SSMS)</li>
+                                <li class="skill-item p-1" data-skill="MySQL">MySQL</li>
+                                <li class="skill-item p-1" data-skill="Oracle">Oracle Database</li>
+                                <li class="skill-item p-1" data-skill="PostgreSQL">PostgreSQL</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h4 class="font-semibold mb-1">BI & Cloud Tools</h4>
+                            <ul class="pl-2 space-y-1">
+                                <li class="skill-item p-1" data-skill="AWS">AWS</li>
+                                <li class="skill-item p-1" data-skill="dbt">dbt</li>
+                                <li class="skill-item p-1" data-skill="Qlik">Qlik Sense/Cloud</li>
+                                <li class="skill-item p-1" data-skill="Power BI">Microsoft Power BI</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <button id="reset-skills" class="no-print mt-4 w-full text-xs px-3 py-1.5 bg-slate-600 text-white rounded hover:bg-slate-500 transition-colors duration-200">Reset Filter</button>
+                </section>
+            </aside>
+            
+            <!-- Main Content -->
+            <div class="w-2/3 p-6 flex flex-col space-y-4 overflow-y-auto">
+                <!-- Summary Section -->
+                <section>
+                    <h2 class="text-lg font-semibold uppercase tracking-wider border-b-2 border-[var(--accent-color)] pb-1 mb-2">Summary</h2>
+                    <p class="text-xs leading-relaxed text-[var(--text-secondary)]">
+                        Data Engineer with 8+ years of experience transforming complex data into actionable insights. Expert in designing and optimizing cloud-native ELT pipelines using Python, SQL, Snowflake, and AWS. Proven track record of enhancing data quality, developing predictive models, and leading cross-functional projects that drive business transformation and operational efficiency.
+                    </p>
+                </section>
+
+                <!-- Professional Experience Section -->
+                <section>
+                    <h2 class="text-lg font-semibold uppercase tracking-wider border-b-2 border-[var(--accent-color)] pb-1 mb-3">Professional Experience</h2>
+                    <div class="space-y-4 text-xs">
+                        <div class="experience-item" data-skills="Python SQL AWS dbt Snowflake">
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-bold text-sm">Data Scientist</h3>
+                                <span class="text-[var(--text-secondary)] font-medium">2023 - 2024</span>
+                            </div>
+                            <p class="font-semibold text-[var(--accent-color)]">PSA BDP | Philadelphia, PA</p>
+                            <ul class="list-disc list-outside pl-5 mt-1 space-y-1 text-[var(--text-secondary)]">
+                                <li>Developed and maintained ETL processes from various sources into a centralized DW.</li>
+                                <li>Designed, built, and optimized cloud-based ELT pipelines using AWS, dbt, and Snowflake.</li>
+                                <li>Implemented version-controlled workflows to standardize analytics processes across teams.</li>
+                                <li>Developed and deployed predictive models to inform business decisions and optimize processes.</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item" data-skills="SQL">
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-bold text-sm">Project Manager, Business Transformation</h3>
+                                <span class="text-[var(--text-secondary)] font-medium">2020 - 2023</span>
+                            </div>
+                            <p class="font-semibold text-[var(--accent-color)]">BDP International | Philadelphia, PA</p>
+                             <ul class="list-disc list-outside pl-5 mt-1 space-y-1 text-[var(--text-secondary)]">
+                                <li>Partnered with executive leadership to restructure and modernize financial systems.</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item" data-skills="Python SQL Qlik Power BI">
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-bold text-sm">Senior Manager, Data Analytics</h3>
+                                <span class="text-[var(--text-secondary)] font-medium">2018 - 2020</span>
+                            </div>
+                            <p class="font-semibold text-[var(--accent-color)]">BDP International | Philadelphia, PA</p>
+                            <ul class="list-disc list-outside pl-5 mt-1 space-y-1 text-[var(--text-secondary)]">
+                                <li>Utilized SQL, Python, and BI languages to generate business insights and optimize operations.</li>
+                            </ul>
+                        </div>
+                         <div class="experience-item" data-skills="SQL">
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-bold text-sm">Developer, Systems Integrations</h3>
+                                <span class="text-[var(--text-secondary)] font-medium">2015 - 2016</span>
+                            </div>
+                            <p class="font-semibold text-[var(--accent-color)]">BDP International | Philadelphia, PA</p>
+                            <ul class="list-disc list-outside pl-5 mt-1 space-y-1 text-[var(--text-secondary)]">
+                                <li>Built and maintained data pipelines for US Customs compliance initiatives.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                 <!-- Projects Section -->
+                <section>
+                    <h2 class="text-lg font-semibold uppercase tracking-wider border-b-2 border-[var(--accent-color)] pb-1 mb-3">Projects</h2>
+                    <div class="space-y-3 text-xs">
+                        <div class="project-item" data-skills="Qlik Snowflake AWS">
+                            <h3 class="font-bold">Automated Data Engineering & EDA</h3>
+                            <p class="text-[var(--text-secondary)]"><strong>Tools:</strong> Qlik Cloud (ODAG), Snowflake, AWS</p>
+                        </div>
+                        <div class="project-item" data-skills="AWS Snowflake SQL Server">
+                            <h3 class="font-bold">EDW Cloud Migration</h3>
+                            <p class="text-[var(--text-secondary)]"><strong>Tools:</strong> AWS, Snowflake, Jira/Confluence, SQL Server</p>
+                        </div>
+                        <div class="project-item" data-skills="SQL Server Power BI Qlik">
+                            <h3 class="font-bold">EOM & Business Process Outsourcing</h3>
+                            <p class="text-[var(--text-secondary)]"><strong>Tools:</strong> SQL Server, Microsoft Power Platform, Qlik Cloud</p>
+                        </div>
+                         <div class="project-item" data-skills="SQL Server Qlik">
+                            <h3 class="font-bold">ERP implementation</h3>
+                            <p class="text-[var(--text-secondary)]"><strong>Tools:</strong> SQL Server, Microsoft Office Suite, Qlik Sense</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <!-- FOOTER -->
+        <footer class="header-footer flex-shrink-0 flex items-center justify-between py-2 px-5 text-xs text-gray-200">
+            <span class="text-[0.65rem]"><strong>References:</strong>
+                <a href="mailto:kyle.robert.j@outlook.com?subject=Reference%20Request" target="_blank" rel="noopener" class="transition-colors duration-200 hover:text-[var(--accent-color)]">
+                    Available upon request
+                </a>
+            </span>
+            <span class="text-[0.65rem] font-semibold">Kyle Jovanovic | Data Specialist</span>
+            <a href="https://www.linkedin.com/in/kylejovanovic/" target="_blank" rel="noopener" class="transition-colors duration-200 hover:text-[var(--accent-color)] text-[0.65rem]">
+                linkedin.com/in/kylejovanovic
+            </a>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- THEME TOGGLE ---
+            const themeToggle = document.getElementById('theme-toggle');
+            const sunIcon = document.getElementById('theme-icon-sun');
+            const moonIcon = document.getElementById('theme-icon-moon');
+
+            // Apply theme on initial load
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                const isDark = document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                sunIcon.classList.toggle('hidden', isDark);
+                moonIcon.classList.toggle('hidden', !isDark);
+            });
+
+            // --- INTERACTIVE SKILLS FILTER ---
+            const skillItems = document.querySelectorAll('.skill-item');
+            const experienceItems = document.querySelectorAll('.experience-item');
+            const projectItems = document.querySelectorAll('.project-item');
+            const allFilterableItems = [...experienceItems, ...projectItems];
+            const resetBtn = document.getElementById('reset-skills');
+            
+            let selectedSkill = null;
+
+            const resetFilter = () => {
+                skillItems.forEach(s => s.classList.remove('selected'));
+                allFilterableItems.forEach(item => {
+                    item.classList.remove('highlight', 'dimmed');
+                });
+                selectedSkill = null;
+            };
+            
+            skillItems.forEach(skill => {
+                skill.addEventListener('click', () => {
+                    const skillName = skill.dataset.skill;
+
+                    // If the same skill is clicked again, reset the filter
+                    if (selectedSkill === skillName) {
+                        resetFilter();
+                        return;
+                    }
+                    
+                    resetFilter();
+                    selectedSkill = skillName;
+                    skill.classList.add('selected');
+
+                    allFilterableItems.forEach(item => {
+                        const itemSkills = item.dataset.skills.split(' ');
+                        if (itemSkills.includes(skillName)) {
+                            item.classList.add('highlight');
+                        } else {
+                            item.classList.add('dimmed');
+                        }
+                    });
+                });
+            });
+            
+            resetBtn.addEventListener('click', resetFilter);
+
+        });
+    </script>
+</body>
+</html>

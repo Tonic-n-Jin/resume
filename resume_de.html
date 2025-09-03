@@ -8,31 +8,46 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /*
-         * This style block defines the overall page layout for both screen preview and printing.
-         * We simulate a standard letter-sized page (8.5in x 11in) for the screen view.
-         */
+
+        :root {
+            --page-bg: #ffffff;
+            --body-bg: #e5e7eb;
+            --sidebar-bg: #f3f4f6;
+            --header-footer-bg: #1d222b;
+            --text-primary: #060337;
+            --text-secondary: #4b5563;
+            --text-light: #ffffff;
+            --accent-color: #a90303;
+            --highlight-bg: rgba(56, 189, 248, 0.1);
+            --highlight-border: #38bdf8;
+        }
+
         body {
-            background-color: #e5e7eb;
-            /* A light gray background to see the page contrast */
+            background-color: var(--body-bg);
             font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease;
         }
 
         .page {
             width: 8.5in;
             height: 11in;
             margin: 2rem auto;
-            /* Center the page on the screen */
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--page-bg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            /* Stack header, main, and footer vertically */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            color: var(--text-primary);
         }
 
         .sidebar {
-            background-color: #f3f4f6;
-            /* Light gray background for the sidebar */
+            background-color: var(--sidebar-bg);
+            transition: background-color 0.3s ease;
+        }
+
+        .header-footer {
+            background-color: var(--header-footer-bg);
+            transition: background-color 0.3s ease;
         }
 
         .sidebar-subtitle {
@@ -45,11 +60,6 @@
         .sidebar-text {
             color: #242b37;
             /* Dark gray color for sidebar text */
-        }
-
-        .header-footer {
-            background-color: #1d222b;
-            /* Dark blue background for the header */
         }
 
         .header-block {
@@ -107,6 +117,12 @@
             padding-left: 1.5em;
         }
 
+        .experience-item, .project-item {
+            transition: opacity 0.4s ease, border-color 0.4s ease;
+            border-left: 3px solid transparent;
+            padding-left: 0.75rem;
+            margin-left: -0.75rem;
+        }
 
         hr {
             border: 1px outset #ffffff;
@@ -153,9 +169,9 @@
                 <div class=" block px-3 py-3 rounded">
                     <a href="https://www.linkedin.com/in/kylejovanovic">
                     <div class="flex-shrink-0 flex items-center">
-                        <div class="bg-slate-300 p-1 rounded-full ml-4"
+                        <div class="bg-[var(--accent-color)] p-1 rounded-full ml-4"
                             style="box-shadow: 1px 2px 4px rgba(0, 0, 0, 1);">
-                            <div class="bg-slate-700 p-3 rounded-full"
+                            <div class="bg-gray-400 p-3 rounded-full"
                                 style="box-shadow: 1px 2px 4px rgba(0, 0, 0, 1);">
                                 <div
                                     class="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center shadow-lg">
@@ -175,11 +191,11 @@
                         Jovanovic</a>
                     </h1>
                 <div class="bg-gray-00 block px-3 py- ">
-                    <p class="text-sm text-slate-100 font-semibold"
+                    <p class="text-sm font-bold text-[var(--accent-color)]"
                         style="margin-top: 10px;text-shadow: 0px 1px 0 rgba(100, 100, 100, .8), 0px 2px 0px rgba(0,0,0, 1);">
                         Data Engineer | Data
                         Scientist</p>
-                    <p class="text-sm text-slate-300">Philadelphia, PA</p>
+                    <p class="text-sm font-semibold text-gray-400">Philadelphia, PA</p>
                 </div>
 
                 </div>
@@ -207,7 +223,7 @@
                                     d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                             </svg>
                             <div class="grid grid-cols-[45px,1fr] text-sm">
-                                <span class="text-xs text-slate-500 uppercase tracking-wide flex items-end"
+                                <span class="text-xs text-[var(--accent-color)] uppercase tracking-wide flex items-end"
                                     style="font-size: .55em; height: 100%;">
                                     Email
                                 </span>
@@ -227,7 +243,7 @@
                                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.518 4.553a1 1 0 01-.272 1.06l-2.12 2.12a16.001 16.001 0 006.364 6.364l2.12-2.12a1 1 0 011.06-.272l4.553 1.518a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z" />
                             </svg>
                             <div class="grid grid-cols-[45px,1fr] text-sm">
-                                <span class="text-xs text-slate-500 uppercase tracking-wide flex items-end"
+                                <span class="text-xs text-[var(--accent-color)] uppercase tracking-wide flex items-end"
                                     style="font-size: .55em; height: 100%;">
                                     Phone
                                 </span><span class="sidebar-text" style="font-size: .85em;">
@@ -244,7 +260,7 @@
                             </svg>
                             <div>
                                 <div class="grid grid-cols-[45px,1fr] text-sm">
-                                    <span class="text-xs text-slate-500 uppercase tracking-wide flex items-end"
+                                    <span class="text-xs text-[var(--accent-color)] uppercase tracking-wide flex items-end"
                                         style="font-size: .55em; height: 100%;">
                                         GitHub
                                     </span>
@@ -272,7 +288,7 @@
                                 <path d="M6 12v5c3 3 9 3 12 0v-5" />
                             </svg>
                             <div class="flex-1">
-                                <span class="font-semibold text-slate-700 block">
+                                <span class="font-bold text-[var(--accent-color)] block">
                                     Pennsylvania State University
                                 </span>
                                 <span class="font-light text-slate-500 block">
@@ -295,7 +311,7 @@
                                     d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
                             </svg>
                             <div>
-                                <span class="font-semibold text-slate-700">Programming & Languages</span>
+                                <span class="font-bold text-[var(--accent-color)]">Programming & Languages</span>
                                 <ul class="mt-1 space-y-1.5">
                                     <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
                                         <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 256 255"
@@ -345,7 +361,7 @@
                                     d="M3 5v14c0 1.657 4.03 3 9 3s9-1.343 9-3V5" />
                             </svg>
                             <div>
-                                <span class="font-semibold text-slate-700">Databases & Warehousing</span>
+                                <span class="font-bold text-[var(--accent-color)]">Databases & Warehousing</span>
                                 <ul class="mt-1 space-y-1.5">
                                     <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
                                         <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
@@ -412,7 +428,7 @@
                                     d="M4 19h4V5H4v14zm6 0h4V9h-4v10zm6 0h4V3h-4v16z" />
                             </svg>
                             <div>
-                                <span class="font-semibold text-slate-700">Business Intelligence Tools</span>
+                                <span class="font-bold text-[var(--accent-color)]">Business Intelligence Tools</span>
                                 <ul class="mt-1 space-y-1.5">
                                     <li class="flex items-center text-slate-500 text-sm" style="font-size:.9em">
                                         <svg xmlns="https://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 text-slate-500"
@@ -486,10 +502,12 @@
                     <hr class="style13" />
                     <ul class="mt-2 space-y-2 text-gray-700 text-sm ml-2" style="font-size:.7em;">
                         <div>
-                            <span class="font-medium text-slate-700">
+                            <span class="font-bold text-[var(--accent-color)]">
                                 <a href="https://www.ascm.org/learning-development/certifications-credentials/cscp/#why-cscp"
                                     target="_blank" rel="noopener noreferrer">Certified Supply Chain Professional,
                                     CSCP</a></span>
+                        </div>
+                        <div>
                                     <span class="font-smaller text-slate-700" style="margin-left: 10px;">
                                 <a href="https://www.ascm.org/learning-development/" target="_blank"
                                     rel="noopener noreferrer">
@@ -498,10 +516,12 @@
                                 </span>
                         </div>
                         <div>
-                            <span class="font-medium text-slate-700">
+                            <span class="font-bold text-[var(--accent-color)]">
                                 <a href="https://www.cbp.gov/trade/programs-administration/customs-brokers/becoming-customs-broker"
                                     target="_blank" rel="noopener noreferrer">Licensed Customs House Broker, LCHB</a>
                             </span>
+                        </div>
+                        <div>
                                     <span class="font-smaller text-slate-700" style="margin-left: 10px;">
                                 <a href="https://www.cbp.gov/" target="_blank" rel="noopener noreferrer">U.S. Customs and Border Protection</a>
                             </span>
@@ -510,181 +530,104 @@
                 </div>
             </div>
 
-            <!-- --Right Side -->
-            <div class="w-[68%] p-1 flex flex-col space-y-2 mx-2">
-                <!-- -- --SUMMARY -->
-                <div>
-<!-- Enhanced Divider -->
-<div class="flex items-center justify-center my-2">
-  <hr class="flex-grow border-t border-gray-300">
-  <h1 class="px-4 text-lg font-semibold tracking-wide text-slate-700 uppercase">Summary</h1>
-  <hr class="flex-grow border-t border-gray-300">
-</div>
-                    <p class="text-slate-900" style="margin-left: 10px;  font-size: .7em;">
-                        Data Engineer with 8+ years of experience transforming complex data into actionable insights.
-                        Expert in designing and optimizing cloud-native ELT pipelines using Python, SQL, Snowflake, and
-                        AWS. Proven track record of enhancing data quality, developing predictive models, and leading
-                        cross-functional projects that drive business transformation and operational efficiency.
+            <!-- Main Content -->
+            <div class="w-2/3 p-6 flex flex-col space-y-4 overflow-y-auto">
+                <!-- Summary Section -->
+                <section>
+                    <h2 class="text-lg font-semibold uppercase tracking-wider border-b-2 border-[var(--accent-color)] pb-1 mb-2">Summary</h2>
+                    <p class="text-xs leading-relaxed text-[var(--text-secondary)]">
+                        Data Engineer with 8+ years of experience transforming complex data into actionable insights. Expert in designing and optimizing cloud-native ELT pipelines using Python, SQL, Snowflake, and AWS. Proven track record of enhancing data quality, developing predictive models, and leading cross-functional projects that drive business transformation and operational efficiency.
                     </p>
-                </div>
-                <!-- -- --PROFESSIONAL EXPERIENCE -->
-                <div>
-                    <!-- Divider -->
-<!-- Enhanced Divider -->
-<div class="flex items-center justify-center my-2">
-  <hr class="flex-grow border-t border-gray-300">
-  <h1 class="px-4 text-lg font-semibold tracking-wide text-slate-700 uppercase">Professional Experience</h1>
-  <hr class="flex-grow border-t border-gray-300">
-</div>
-                    <section style="font-size: .65em; margin-left: 10px; margin-right: 10px;">
+                </section>
 
-                        <!-- Data Scientist -->
-                        <div class="role-layout" style="margin: 0px;">
-                            <h3 class="role-title">Data Scientist</h3>
-                            <p class="role-years">2023 - 2024</p>
-                        </div>
-                        <div class="role-layout" style="margin: 0px;">
-                            <p class="company-title">PSA BDP | Philadelphia, PA</p>
-                            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8aDpHgrKpVwvVy27cv5r50CXbRwLdwaOJ6Q&s"
-                                alt="Company Logo"
-                                style="width:50px; object-fit:contain; vertical-align:middle; margin-right: 5px;"> -->
-                        </div>
-                        <ul class="role-responsibilities">
-                            <li class="role-responsibility">Developed and maintained ETL processes from various sources
-                                into a centralized DW.</li>
-                            <li class="role-responsibility">Designed, built, and optimized cloud-based ELT pipelines
-                                using AWS, dbt, and Snowflake.</li>
-                            <li class="role-responsibility">Documented and maintained source target mapping with
-                                technical and business terminology.</li>
-                            <li class="role-responsibility">Implemented version-controlled workflows to standardize
-                                analytics processes across teams.</li>
-                            <li class="role-responsibility">Developed and deployed predictive models to inform business
-                                decisions and optimize processes.</li>
-                        </ul>
-                        <!-- Project Manager, Business Transformation -->
-                        <div>
-                            <div class="role-layout">
-                                <h3 class="role-title">Project Manager, Business
-                                    Transformation</h3>
-                                <p class="role-years">2020 - 2023</p>
+                <!-- Professional Experience Section -->
+                <section>
+                    <h2 class="text-lg font-semibold uppercase tracking-wider border-b-2 border-[var(--accent-color)] pb-1 mb-3">Professional Experience</h2>
+                    <div class="space-y-4 text-xs">
+                        <div class="experience-item" data-skills="Python SQL AWS dbt Snowflake">
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-bold text-sm">Data Scientist</h3>
+                                <span class="text-[var(--text-secondary)] font-medium">2023 - 2024</span>
                             </div>
-                            <div class="role-layout">
-                                <p class="company-title">BDP International | Philadelphia, PA</p>
-
-                            </div>
-                            <ul class="role-responsibilities">
-                                <li class="role-responsibility">Partnered with executive leadership to restructure and
-                                    modernize financial systems.</li>
+                            <p class="font-semibold text-[var(--accent-color)]">PSA BDP | Philadelphia, PA</p>
+                            <ul class="list-disc list-outside pl-5 mt-1 space-y-1 text-[var(--text-secondary)]">
+                                <li>Developed and maintained ETL processes from various sources into a centralized DW.</li>
+                                <li>Designed, built, and optimized cloud-based ELT pipelines using AWS, dbt, and Snowflake.</li>
+                                <li>Implemented version-controlled workflows to standardize analytics processes across teams.</li>
+                                <li>Developed and deployed predictive models to inform business decisions and optimize processes.</li>
                             </ul>
                         </div>
-                        <!-- Senior Manager, Data Analytics -->
-                        <div>
-                            <div class="role-layout">
-                                <h3 class="role-title">Senior Manager, Data Analytics</h3>
-                                <p class="role-years">2018 - 2020</p>
+                        <div class="experience-item" data-skills="SQL">
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-bold text-sm">Project Manager, Business Transformation</h3>
+                                <span class="text-[var(--text-secondary)] font-medium">2020 - 2023</span>
                             </div>
-                            <div class="role-layout">
-                                <p class="company-title">BDP International | Philadelphia, PA</p>
-                                <img src="https://ml.globenewswire.com/Resource/Download/a0fd6bc7-a104-4ee2-a55e-958fc19797f2"
-                                    alt="Company Logo"
-                                    style="width:0px; object-fit:contain; vertical-align:middle; margin-right: 5px;">
-                            </div>
-                            <ul class="role-responsibilities">
-                                <li class="role-responsibility">Utilized SQL, Python, and BI languages
-                                    to generate business insights and optimize operations.</li>
+                            <p class="font-semibold text-[var(--accent-color)]">BDP International | Philadelphia, PA</p>
+                             <ul class="list-disc list-outside pl-5 mt-1 space-y-1 text-[var(--text-secondary)]">
+                                <li>Partnered with executive leadership to restructure and modernize financial systems.</li>
                             </ul>
                         </div>
-                        <!-- Manager, Operations & Compliance -->
-                        <div>
-                            <div class="role-layout">
-                                <h3 class="role-title">Manager, Operations & Compliance</h3>
-                                <p class="role-years">2016 - 2018</p>
+                        <div class="experience-item" data-skills="Python SQL Qlik Power BI">
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-bold text-sm">Senior Manager, Data Analytics</h3>
+                                <span class="text-[var(--text-secondary)] font-medium">2018 - 2020</span>
                             </div>
-                            <p class="company-title">BDP International | Philadelphia, PA</p>
-                            <ul class="role-responsibilities">
-                                <li class="role-responsibility">Managed a team of 15+ associates, specialists, analysts,
-                                    and team leaders.</li>
+                            <p class="font-semibold text-[var(--accent-color)]">BDP International | Philadelphia, PA</p>
+                            <ul class="list-disc list-outside pl-5 mt-1 space-y-1 text-[var(--text-secondary)]">
+                                <li>Utilized SQL, Python, and BI languages to generate business insights and optimize operations.</li>
                             </ul>
                         </div>
-                        <!-- Developer, Systems Integrations -->
-                        <div>
-                            <div class="role-layout">
-                                <h3 class="role-title">Developer, Systems Integrations</h3>
-                                <p class="role-years">2015 - 2016</p>
+                         <div class="experience-item" data-skills="SQL">
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-bold text-sm">Developer, Systems Integrations</h3>
+                                <span class="text-[var(--text-secondary)] font-medium">2015 - 2016</span>
                             </div>
-                            <p class="company-title">BDP International | Philadelphia, PA</p>
-                            <ul class="role-responsibilities">
-                                <li class="role-responsibility">Built and maintained data pipelines for US Customs
-                                    compliance initiatives.</li>
+                            <p class="font-semibold text-[var(--accent-color)]">BDP International | Philadelphia, PA</p>
+                            <ul class="list-disc list-outside pl-5 mt-1 space-y-1 text-[var(--text-secondary)]">
+                                <li>Built and maintained data pipelines for US Customs compliance initiatives.</li>
                             </ul>
                         </div>
-
-                    </section>
-                </div>
-
-                <div>
-<!-- Enhanced Divider -->
-<div class="flex items-center justify-center my-2">
-  <hr class="flex-grow border-t border-gray-300">
-  <h1 class="px-4 text-lg font-semibold tracking-wide text-slate-700 uppercase">Projects</h1>
-  <hr class="flex-grow border-t border-gray-300">
-</div>
-                    <!-- -- --PROJECTS -->
-                    <section style="margin-left: 10px; margin-right: 10px;margin-top: -5px;">
-                        <div style="font-size: .8rem;" class="text-gray-700">
-                            <div class="flex justify-between items-center">
-                                <strong>Automated Data Engineering & EDA</strong>
-                                <span class="text-right text-slate-500" style="font-size: smaller;">Singapore, SG</span>
-                            </div>
+                    </div>
+                </section>
+                
+                 <!-- Projects Section -->
+                <section>
+                    <h2 class="text-lg font-semibold uppercase tracking-wider border-b-2 border-[var(--accent-color)] pb-1 mb-3">Projects</h2>
+                    <div class="space-y-3 text-xs">
+                        <div class="project-item" data-skills="Qlik Snowflake AWS">
+                            <h3 class="font-bold">Automated Data Engineering & EDA (CRISP-DM)</h3>
+                            <p class="text-[var(--accent-color)] font-semibold">Singapore, SG</p>
+                            <p class="text-[var(--text-secondary)]" style="margin-inline-start:3%;font-weight: 200;font-style: italic;">Qlik Cloud (ODAG), Snowflake, AWS</p>
                         </div>
-                            <p style="margin-left: 10px;font-size:.7em"><strong>Methodology:</strong> CRISP-DM </p>
-                             <p style="margin-left: 10px;font-size:.7em">  <strong>Tools:</strong> Qlik Cloud (ODAG),
-                                Snowflake, AWS
-                            </p> 
-                        <div style="font-size: .8rem;" class="text-gray-700">
-                            <div class="flex justify-between items-center">
-                                <strong>EDW Cloud Migration</strong>
-                                <span class="text-right text-slate-500" style="font-size: smaller;">Philadelphia, US</span>
-                            </div>
+                        <div class="project-item" data-skills="AWS Snowflake SQL Server">
+                            <h3 class="font-bold">EDW Cloud Migration (Agile/Scrum)</h3>
+                            <p class="text-[var(--accent-color)] font-semibold">Philadelphia, US</p>
+                            <p class="text-[var(--text-secondary)]" style="margin-inline-start:3%;font-weight: 200;font-style: italic;">AWS, Snowflake, Jira/Confluence, SQL Server</p>
                         </div>
-                            <p style="margin-left: 10px;font-size:.7em"><strong>Methodology:</strong> Agile/Scrum </p>
-                            <p style="margin-left: 10px;font-size:.7em"><strong>Tools:</strong> AWS, Snowflake,
-                                Jira/Confluence, SQL Server</p>
-                        <div style="font-size: .8rem;" class="text-gray-700">
-                            <div class="flex justify-between items-center">
-                                <strong>EOM & Business Process Outsourcing</strong>
-                                <span class="text-right text-slate-500" style="font-size: smaller;">Bangalore, IN</span>
-                            </div>
+                        <div class="project-item" data-skills="SQL Server Power BI Qlik">
+                            <h3 class="font-bold">EOM & Business Process Outsourcing (Accenture Delivery Systems)</h3>
+                            <p class="text-[var(--accent-color)] font-semibold">Bangalore, IN</p>
+                            <p class="text-[var(--text-secondary)]" style="margin-inline-start:3%;font-weight: 200;font-style: italic;">SQL Server, Microsoft Power Platform, Qlik Cloud</p>
                         </div>
-                            <p style="margin-left: 10px;font-size: .7em"><strong>Methodology:</strong> Accenture
-                                Delivery Suite 
-                                </p>
-                                <p style="margin-left: 10px;font-size:.7em"><strong>Tools:</strong> SQL Server,
-                                Microsoft Power Platform, Qlik Cloud</p>
-                        <div style="font-size: .8rem;" class="text-gray-700">
-                            <div class="flex justify-between items-center">
-                                <strong>ERP implementation</strong>
-                                <span class="text-right text-slate-500" style="font-size:smaller;">10+ US Locations</span>
-                            </div>
+                         <div class="project-item" data-skills="SQL Server Qlik">
+                            <h3 class="font-bold">ERP implementation (Agile/Scrum)</h3>
+                            <p class="text-[var(--accent-color)] font-semibold">10+ Locations, US</p>
+                            <p class="text-[var(--text-secondary)]" style="margin-inline-start:3%;font-weight: 200;font-style: italic;">SQL Server, Microsoft Office Suite, Qlik Sense</p>
                         </div>
-                            <p style="margin-left: 10px;font-size: .7em"><strong>Methodology:</strong> Agile/Scrum 
-                                </p>
-                                <p style="margin-left: 10px;font-size:.7em"><strong>Tools:</strong> SQL Server, Microsoft Office Suite, Qlik Sense</p>
-                        </div>
-                    </section>
-                </div>
-
+                    </div>
+                </section>
+            </div>
         </main>
         <!-- FOOTER -->
         <footer class="header-footer flex-shrink-0 flex items-center justify-between py-3 text-xs text-gray-100">
-            <span class="ml-2" style="font-size: .68em;"><strong>References:</strong>
+            <span class="ml-2 text-[var(--accent-color)]" style="font-size: .68em;"><strong>References:</strong>
                 <a href="mailto:kyle.robert.j@outlook.com?subject=Reference%20Request%20-%20Kyle%20Jovanovic&body=Hello%20Kyle,%0D%0A%0D%0AI%20hope%20this%20email%20finds%20you%20well.%20I%20am%20reaching%20out%20regarding%20your%20professional%20references.%0D%0A%0D%0ACould%20you%20please%20provide%20contact%20information%20for%202-3%20professional%20references%20who%20can%20speak%20to%20your%20work%20experience%20and%20qualifications?%0D%0A%0D%0AThank%20you%20for%20your%20time.%0D%0A%0D%0ABest%20regards,"
-                    target="_blank" rel="noopener" class="hover:text-teal-400 mr-2">
+                    target="_blank" rel="noopener" class="hover:text-teal-400 mr-2 text-gray-400">
                     Available upon request
                 </a></span>
-            <span class="mx-2" style="font-size: .68em;">Kyle Jovanovic | Data Specialist</span>
+            <span class="mx-2 text-gray-400" style="font-size: .68em;">Kyle Jovanovic | Data Specialist</span>
             <a href="https://www.linkedin.com/in/kylejovanovic/" target="_blank" rel="noopener"
-                class="hover:text-teal-400 mr-2" style="font-size: .68em;">https://www.linkedin.com/in/kylejovanovic
+                class="hover:text-teal-400 mr-2 text-[var(--accent-color)]" style="font-size: .68em;">https://www.linkedin.com/in/kylejovanovic
             </a>
         </footer>
 
