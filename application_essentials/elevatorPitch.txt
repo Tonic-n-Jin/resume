@@ -1,0 +1,11 @@
+I’m your candidate for three reasons: I’m technically strong, I’ve refined my business acumen through years of customer relationship building, and I’m trusted to lead teams and drive towards actualizing a shared vision.
+
+1) Technical: Enterprise-scale data engineering + modern stack fluency
+I bring 8+ years designing and delivering production-grade data products and pipelines, with deep hands-on strength in Python and expert SQL across cloud ecosystems. I’m comfortable architecting end-to-end solutions on modern stacks—warehouse/lakehouse patterns, orchestration, integration, and streaming—focused on security, performance, reliability, and cost.  Technology has always been a passion of mine.
+
+2) Business: Customer-facing architecture leadership that translates business to roadmaps
+I excel at partnering directly with stakeholders to turn ambiguous goals into clear technical plans: discovery sessions, target-state architectures, POCs, and phased delivery roadmaps. I communicate effectively to both engineers and executives, using diagrams and documentation to build alignment, accelerate decisions, and drive adoption.  I successfully facilitate and promote valuable dialogue between stakeholders.
+
+3) Leadership: Trusted technical advisor mindset that enables outcomes and leads successful teams
+I’m energized by being the “go-to” person customers and delivery teams rely on—removing blockers, mentoring engineers, and setting standards that raise quality. I enjoy collaborative, remote-first environments and bring a practical, curious approach that consistently turns complex data challenges into scalable solutions customers can trust.  I welcome the challenges of the unknown and the opportunities it creates.
+

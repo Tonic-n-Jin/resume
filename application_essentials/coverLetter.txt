@@ -1,0 +1,49 @@
+<sample-job-description>
+skilled Analytics Engineer / Modern Data Engineer to design, build, and maintain scalable, reliable data pipelines and analytics-ready data models. This role will focus on leveraging Snowflake, Airflow, dbt, Fivetran, SQL, and Python to enable trusted analytics and data-driven decision-making across the organization.
+The ideal candidate has strong experience with modern data stacks, understands analytics use cases, and enjoys collaborating closely with analytics, product, and business teams.
+Design, build, and maintain ELT/ETL pipelines using Fivetran, Airflow, and Python
+Develop and optimize analytics-ready data models in Snowflake using dbt
+Implement data transformations, testing, and documentation following analytics engineering best practices
+Ensure data quality, accuracy, and reliability through validation checks and monitoring
+Collaborate with analytics, BI, and business stakeholders to understand data requirements
+Optimize Snowflake performance, cost, and query efficiency
+Maintain scheduling, orchestration, and dependency management using Apache Airflow
+Support downstream analytics tools (e.g., Looker, Tableau, Power BI) with well-modeled data
+Contribute to data governance, version control, and CI/CD processes for data pipelines
+4+ years of experience in data engineering, analytics engineering, or similar roles
+Strong hands-on experience with Snowflake
+Advanced SQL skills (query optimization, window functions, CTEs)
+Experience with dbt for transformations, testing, and documentation
+Experience using Apache Airflow for orchestration
+Proficiency in Python for data processing and automation
+Experience with Fivetran or similar ingestion tools
+Solid understanding of data warehousing concepts and dimensional modeling
+Experience working in cloud environments (AWS, Azure, or Google Cloud Platform)
+</sample-job-description>
+<sample-cover-letter>
+January 12, 2026  
+Camelot Integrated Solutions Inc.
+
+Dear Hiring Manager,  
+
+I am applying for the Data Engineer position at Camelot Integrated Solutions Inc. The role’s emphasis on developing reliable data pipelines and analytics-ready models using Snowflake, orchestration tools like Airflow, dbt, SQL, and Python closely aligns with my experience leading analytics engineering initiatives that deliver governed, trusted data assets for confident business consumption and utilization.
+
+ELT/ETL Pipelines & Orchestration: I architected and deployed an enterprise-level medallion architecture with cloud-based ELT pipelines on AWS for PSA BDP. Leveraging SQL Server OLTP databases and Qlik Talend for change data capture (CDC), I implemented Snowflake pipelines orchestrated through Prefect—experience that translates directly to modern orchestration patterns used in Airflow-style workflows.
+
+Expert SQL & Analytics Enablement: With more than eight years of SQL experience, I have delivered 300+ production stored procedures and optimized queries that operationalized business logic into reusable, analytics-ready transformations—powering curated dimensional outputs and consistent KPI definitions for reporting and downstream BI consumption.
+
+Data Warehousing & Modeling: Over eight years, I have implemented star, snowflake, and galaxy schemas across traditional and modern data technologies, tailoring designs to business requirements. I collaborated with key stakeholders to migrate an on-premises Oracle Operational Data Store into a cloud-based Enterprise Data Warehouse utilizing AWS for storage, Snowflake for compute, and dbt to implement medallion-layered marts.
+
+Data Governance & CI/CD: I have one year of focused self-study in data management frameworks (DAMA-DMBOK, DGI, CMMI DMM), and I apply these principles directly through my design decisions—driving standards for testing, documentation, version control, and repeatable delivery. Complementing this, I bring more than four years of hands-on experience implementing CI/CD using GitHub Actions and dbt’s native capabilities.
+
+Performance Tuning: I reduced enterprise OLAP query latency by 88% by overhauling enterprise BI data marts through a lambda-style architecture, combining Python and SQL Server optimizations with downstream semantic-layer improvements across the Qlik Sense environment (including scripting and scheduling via native platform capabilities).
+
+Collaboration & Communication: I have a proven record of partnering with C-suite executives and cross-functional teams to align technology investments with strategic business objectives. Through collaborations with colleagues at PwC, Accenture, and PSA, I have incorporated industry best practices to consistently deliver high-quality data assets and downstream solutions.
+
+I would welcome the opportunity to contribute to Camelot Integrated Solutions Inc. by developing scalable, analytics-ready data products that effectively bridge technical execution and tangible business outcomes.
+
+Thank you for your time and consideration. I look forward to the possibility of discussing how my background can support your team’s objectives.
+
+Sincerely,  
+Kyle Jovanovic
+</sample-cover-letter>

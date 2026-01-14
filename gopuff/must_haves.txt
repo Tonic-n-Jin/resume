@@ -1,0 +1,66 @@
+### **1. Must-haves**
+
+*These are the non-negotiables. If your resume does not clearly evidence these, you will likely be filtered out by the ATS or the initial recruiter screen.*
+
+- `required_keywords`**:
+- SQL (Expert Level)**: Must show "expert" or "advanced" proficiency, not just "familiarity."
+- Data Modeling**: Specific mentions of designing schemas, data marts, or modeling complex datasets.
+- 7+ Years Experience**: Total professional experience in analytics, BI, or data engineering.
+- Strategic Partner / Thought Partner**: Phrases indicating you work *with* leadership, not just *for* them.
+- Cross-functional Collaboration**: Mentioning specific departments like Product, Operations, Marketing, or Finance.
+- Visualization / Reporting**: Building "advanced BI reporting" and "dashboards."
+- Insights / ROI**: Focus on "actionable insights," "growth," "profitability," and "driving decisions."
+
+
+- `missing_critical`** (Check your resume for these potential gaps):
+- Lack of "Principal" Scope**: If your bullets only describe *tasks* (e.g., "Wrote SQL queries"), you will fail. You must describe *outcomes* and *ownership* (e.g., "Architected the data model that reduced query time by 40% and influenced a 10% shift in marketing spend").
+- No Mentorship Evidence**: The JD explicitly asks to "Mentor analysts." If you are a senior/principal candidate, you must show you elevate the team around you.
+- Separation of Tech & Business**: This role requires both. A resume that is 100% technical (coding only) or 100% business (strategy only) will likely be rejected.
+
+
+
+---
+
+### **2. Important but Flexible**
+
+*These will separate the top 10% of candidates from the rest. Missing them isn't a guaranteed rejection, but having them puts you at the top of the pile.*
+
+- `preferred_keywords`**:
+- Snowflake**: The specific data warehouse they use.
+- dbt**: The specific transformation tool they prefer.
+- Python / R**: "Proficiency in at least one" is preferred for advanced analytics.
+- Looker / Tableau / Power BI**: Specific modern BI tools (Looker is often paired with Google Cloud/Snowflake stacks).
+- Retail / E-commerce**: Domain experience is "strongly preferred."
+- MBA / Advanced Degree**: Nice to have, but usually trumped by strong experience.
+
+
+- `missing_optional`** (Areas where you can compromise):
+- Specific Tool Match**: If you know BigQuery instead of Snowflake, or Airflow instead of dbt, that is usually acceptable *if* you explicitly mention your ability to adapt or draw parallels (e.g., "Expert in cloud warehousing (BigQuery/Snowflake)").
+- Location**: They are open to remote but list specific hubs (Philly, Miami, NYC, etc.) for "preferential treatment." If you aren't in these cities, emphasize your remote work effectiveness.
+
+
+
+---
+
+### **3. Positioning Cues**
+
+*This is the "human" element. Once you pass the ATS, the hiring manager reviews for these subtle signals.*
+
+- `implicit_skills`** (The "Vibe" check):
+- Ambiguity Tolerance**: The JD mentions "tackling ambiguous problems." Your resume should highlight times you created structure out of chaos (e.g., "Defined KPIs for a previously unmeasured product launch").
+- Storytelling**: Can you explain *why* the data matters? Use terms like "presented to executives," "influenced strategy," or "translated complex data."
+- Autonomy**: They want an "independent contributor." avoid language that sounds like you always needed permission or detailed instructions.
+
+
+- `strength_matches`**:
+- Hybrid Profile**: The ideal candidate is a "Analytics Engineer" (technical) who acts like a "Product Manager" (strategic). If you have this mix, highlight it in your Summary.
+- Scalability**: Mentions of "decision-making at scale" or "scalability" of data platforms suggest they are growing fast and need systems that won't break.
+
+
+- `application_red_flags`**:
+- "Order Taker" Language**: Avoid phrases like "Assisted with," "Helped," or "Responsible for." Use power verbs like "Led," "Architected," "Drove," and "Designed."
+- Tool Salad**: Listing 50 tools without context. Focus on the ones relevant to their stack (SQL, Snowflake, dbt, Looker, Python).
+
+
+
+**Would you like me to review a specific bullet point from your current resume to see if it hits the "Principal" level tone this job requires?**
